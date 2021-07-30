@@ -21,8 +21,8 @@ const CardGame = ()=> {
     let tempAi = []
     
     for (let i=0; i<2; i++){
-      tempPlayer.push(...playerHand, newDeck.deal());
-      tempAi.push(...playerHand, newDeck.deal());
+      tempPlayer.push(newDeck.deal());
+      tempAi.push(newDeck.deal());
     }
 
     let tempPlayerHand = new Hand(tempPlayer);
@@ -60,7 +60,11 @@ const CardGame = ()=> {
   }
 
   const newGame = ()=> {
-    window.location.reload();
+    setPlayerHand([])
+    setAiHand([])
+    setBusted(false)
+    setStay(false)
+    dealHands()
   }
 
   let bustedDisplay = "hidden"
@@ -73,27 +77,30 @@ const CardGame = ()=> {
     stayDisplay = true
   }
 
-  let winner=""
+  let winner="BlackJack"
+  let fadeIn=""
   if(stay || busted){
     if (busted){
-      winner = "AI wins"
+      winner = "You lose"
     } else {
       if(aiHand.value() > 21){
-        winner = "You win!"
+        winner = "WINNER!"
       }
       else if(playerHand.value() === aiHand.value()){
-        winner = "tie"
+        winner = "Tie"
       } else if (playerHand.value() > aiHand.value()){
-        winner = "You win!"
+        winner = "WINNER!"
       } else {
-        winner = "AI wins"
+        winner = "You lose"
       }
     }
+    fadeIn="fade-in-header"
   }
 
   let disableButton=""
   if(stay || busted) {
     disableButton="inactive"
+    bustedDisplay = ""
   }
 
   let hideDealerCard="hidden"
@@ -147,7 +154,7 @@ const CardGame = ()=> {
   
   return(
     <div className="game-container">
-      <h1 className="black game-header">Blackjack</h1>
+      <h1 className={"black game-header " + fadeIn}>{winner}</h1>
       <div className="image-and-score">
         <img className="icon" src={aiImage} />
         <div className={!stayDisplay ? bustedDisplay : ""} >{ aiHand.hand ? aiHand.value() : 0}</div>
@@ -169,9 +176,9 @@ const CardGame = ()=> {
       </div>
 
 
-      <div>
+      {/* <div>
         <h2 className={!stayDisplay ? bustedDisplay : ""} >{winner}</h2>
-      </div>
+      </div> */}
       <div className="player-buttons">
         <button disabled={stayDisplay || busted} className={disableButton} onClick={playerHits}> Hit </button>
         <button disabled={stayDisplay || busted} className={disableButton} onClick={playerStays}> Stay </button>

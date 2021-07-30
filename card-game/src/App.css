@@ -29,17 +29,33 @@ body{
   font-size: 90px;
   margin-top: 0%;
   margin-bottom: 10px;
+  height: 130px;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgb(192, 189, 28);
+  
 }
 
-.player-buttons{
+.fade-in-header {
+  display: inline-block;
+  animation: fadeIn linear .6s;
+  font-size: 110px;
+  transition: linear 1s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+.player-buttons > button{
   margin-top: 10px;
+  padding: 40px;
+  border-radius: 100%;
 }
 
 button{
   padding:10px 15px;
-  border:1px solid rgb(192, 189, 28);
+  border:2px solid rgb(192, 189, 28);
   background-color: black;
   color:rgb(192, 189, 28);
   margin:0px 3px 2px 0px;
@@ -56,7 +72,7 @@ button:not(.inactive):hover{
   }
 
 button.inactive{
-  background-color: grey;
+  background-color: #616161;
 }
 /*//// DEALER END ////*/
 .icon{
