@@ -1,0 +1,146 @@
+
+
+body{
+  color: white;
+  background: url(/src/images/casino.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.hidden{
+  display:none;
+}
+
+.visible {
+  display: block;
+}
+
+.game-container{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.game-header{
+  font-size: 90px;
+  margin-top: 0%;
+  margin-bottom: 10px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(192, 189, 28);
+}
+
+.player-buttons{
+  margin-top: 10px;
+}
+
+button{
+  padding:10px 15px;
+  border:1px solid rgb(192, 189, 28);
+  background-color: black;
+  color:rgb(192, 189, 28);
+  margin:0px 3px 2px 0px;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-weight:300;
+  transition: all 0.2s;
+}
+
+button:not(.inactive):hover{
+  color:#000000;
+  background-color:#c30202;
+  }
+
+button.inactive{
+  background-color: grey;
+}
+/*//// DEALER END ////*/
+.icon{
+  border: black 1px solid;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.dealer {
+  flex-direction: row;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.image-and-score > div {
+  font-size: 80px;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-right: 10px;
+}
+
+.image-and-score{
+  display:inline-flex;
+  margin-bottom: 10px;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: rgb(192, 189, 28);
+  color:rgb(7, 7, 1);
+}
+
+/*//// DEALER END ////*/
+
+
+/*//// PLAYING CARDS START ////*/
+.cardContainer {
+  border: 2px black solid;
+  background-color: white;
+  height: 140px;
+  width: 110px;
+  margin-right: 5px;
+  border-radius: 4px;
+  
+  display: inline-flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  box-shadow: 2px 2px #094d15;
+}
+
+.black{
+  color: black;
+}
+
+.red{
+  color: red;
+}
+
+.blank {
+  /* background-image: url(/src/images/card.jpg); */
+  /* background-size: 100px 100px; */
+  background: repeating-linear-gradient(
+  60deg,
+  #d43c3c,
+  #d43c3c 10px,
+  #991818 10px,
+  #991818 20px
+);
+}
+
+.cardRankSuitTop{
+  margin: 5px;
+  font-size: 25px;
+  align-self: flex-start;
+}
+.cardRankSuitBottom{
+  margin: 5px;
+  font-size: 25px;
+  align-self: flex-end;
+}
+
+.cardSuit {
+  margin: 5px;
+  font-size: 40px;
+  align-self: center;
+
+}
+/*//// PLAYING CARDS END ////*/
