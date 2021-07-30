@@ -108,7 +108,6 @@ const CardGame = ()=> {
     hideDealerCard="visible"
   } 
 
-  //create cards
   let playerCards = []
   if(playerHand.hand){
     playerCards = playerHand.hand.map(card => {
@@ -174,11 +173,6 @@ const CardGame = ()=> {
           {playerCards}
         </div>
       </div>
-
-
-      {/* <div>
-        <h2 className={!stayDisplay ? bustedDisplay : ""} >{winner}</h2>
-      </div> */}
       <div className="player-buttons">
         <button disabled={stayDisplay || busted} className={disableButton} onClick={playerHits}> Hit </button>
         <button disabled={stayDisplay || busted} className={disableButton} onClick={playerStays}> Stay </button>

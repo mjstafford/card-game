@@ -5,15 +5,24 @@ class Hand {
   }
 
   value(){
-    //issues with two aces showing up and causing bust instead of both being set to 1
-    return this.hand.reduce((total, currentCard) => {
-      return total + currentCard.value(total)
+    const copyHand = [...this.hand]
+    copyHand.sort((a,b) => {
+      if(a.rank === "A"){
+        return 1;
+      }
+      else if(a.rank > b.rank){
+        return 1
+      } else {
+        return -1;
+      }
+    })
+
+    return copyHand.reduce((total, currentCard) => {
+        return total + currentCard.value(total)
     }, 0)
   }
 
-  //shows only one card
   dealerValue(){
-    // debugger
     return this.hand[1].value(0)
   }
 
