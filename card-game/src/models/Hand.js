@@ -1,14 +1,17 @@
-
+import Card from './Card'
 class Hand {
   constructor(hand){
     this.hand = hand
   }
 
   value(){
+    const ace = new Card('A','♦')
     const copyHand = [...this.hand]
     copyHand.sort((a,b) => {
-      if(a.rank === "A"){
+      if(a.rank === 'A'){
         return 1;
+      } else if (b.rank === 'A'){
+        return -1
       }
       else if(a.rank > b.rank){
         return 1
