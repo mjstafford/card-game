@@ -77,7 +77,7 @@ const CardGame = ()=> {
     stayDisplay = true
   }
 
-  let winner="BlackJack"
+  let winner="Blackjack"
   let fadeIn=""
   if(stay || busted){
     if (busted){
@@ -155,7 +155,10 @@ const CardGame = ()=> {
     <div className="game-container">
       <h1 className={"black game-header " + fadeIn}>{winner}</h1>
       <div className="image-and-score">
+        <div>
+        <p className="player-title">Dealer</p>
         <img className="icon" src={aiImage} />
+        </div>
         <div className={!stayDisplay ? bustedDisplay : ""} >{ aiHand.hand ? aiHand.value() : 0}</div>
         <div className={hideDealerCard} >{ aiHand.hand ? aiHand.dealerValue(): ""}</div>
       </div>
@@ -165,7 +168,10 @@ const CardGame = ()=> {
         </div>
       </div>
         <div className="image-and-score">
-          <img className="icon" src={playerImage} />
+          <div>
+            <p className="player-title">Player</p>
+            <img className="icon" src={playerImage} />
+          </div>
           <div>{ playerHand.hand ? playerHand.value() : 0}  </div>
         </div>
       <div className="dealer">

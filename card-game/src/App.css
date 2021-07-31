@@ -1,5 +1,6 @@
 body{
   color: white;
+  margin: 0;
   background: url(/src/images/casino.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -9,7 +10,7 @@ body{
 
 .hidden{
   display:none;
-}
+} 
 
 .visible {
   display: block;
@@ -21,11 +22,18 @@ body{
   align-content: center;
   align-items: center;
 }
+
+/*//// NAVBAR START ////*/
+.logo-image{
+  width: 60px;
+} 
+/*//// NAVBAR END ////*/
+
 /*//// HEADER START ////*/
 .game-header{
   font-size: 90px;
   margin-top: 0%;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   height: 130px;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgb(192, 189, 28);
@@ -33,7 +41,7 @@ body{
 
 .fade-in-header {
   display: inline-block;
-  animation: fadeIn linear .6s;
+  animation: fadeIn  4s;
   font-size: 110px;
   transition: linear 1s;
 }
@@ -45,13 +53,42 @@ body{
 /*//// HEADER END ////*/
 
 /*//// BUTTON START ////*/
-.player-buttons > button{
-  margin-top: 10px;
+.player-buttons > button {
+  margin-top: 5px;
+  margin-right: 15px;
   padding: 40px;
+  font-weight: 900;
   border-radius: 100%;
 }
 
+.navbar button {
+  font-weight: 900;
+}
+
+.navbar {
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background-image: linear-gradient(rgb(43, 66, 43) , rgb(0, 0, 0));;
+}
+
+.home-button {
+  margin: 10px 0px 10px 20px;
+}
+
+.blackjack-button {
+  margin: 10px 20px 10px 0px;
+}
+
+hr {
+  margin: 0px;
+  height: 1px;
+  background-color: #C0BD1C;
+  border: none;
+}
+
 button{
+  font-size: 20px;
   padding:10px 15px;
   border:2px solid rgb(192, 189, 28);
   background-color: black;
@@ -66,7 +103,7 @@ button{
 
 button:not(.inactive):hover{
   color:#000000;
-  background-color:#c30202;
+  background-color:#368029;
   }
 
 button.inactive{
@@ -86,7 +123,7 @@ button.inactive{
 .dealer {
   flex-direction: row;
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .image-and-score > div {
@@ -94,14 +131,22 @@ button.inactive{
   font-weight: 600;
   margin-top: 0px;
   margin-right: 10px;
+  align-self: center;
 }
 
 .image-and-score{
   display:inline-flex;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: rgb(192, 189, 28);
   color:rgb(7, 7, 1);
+  text-align: center;
+}
+
+.player-title{
+  font-size: 30px;
+  -webkit-text-stroke-width: .1px;
+  margin:0;
 }
 /*//// DEALER END ////*/
 
@@ -131,10 +176,10 @@ button.inactive{
 .blank {
   background: repeating-linear-gradient(
   60deg,
-  #d43c3c,
-  #d43c3c 10px,
-  #991818 10px,
-  #991818 20px
+  #2e2a2a,
+  #696565 10px,
+  #110f0f 10px,
+  #1d1919 20px
 );
 }
 
@@ -157,3 +202,26 @@ button.inactive{
 
 }
 /*//// PLAYING CARDS END ////*/
+
+dl {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
+  justify-content: space-between;
+}
+
+dt {
+  width: 25%;
+  margin: 10px;
+  min-width: 200px;
+}
+
+.landing-page-container{
+  width: 95%;
+  margin: auto;
+  align-self: center;
+}
+.application-info > p, .technologies-info > dl, .team-info > p {
+  margin-left: 20px;
+}

@@ -9,10 +9,10 @@ import CardGame from './components/CardGame.js'
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <BrowserRouter>
+        <Navbar />
         <Route exact path="/" component={LandingPage}/>
-        <Route exact path="/cardgame" component={CardGame}/>
+        <Route exact path="/blackjack" component={CardGame}/>
       </BrowserRouter>
     </div>
   );
