@@ -2,7 +2,7 @@
 An application to play Blackjack against an AI-dealer
 
 ## Heroku Deployment
-TBD
+* https://mintbean-blackjack.herokuapp.com/blackjack  (load time may be long)
 
 ## List of Features
 * Introductory Landing Page
