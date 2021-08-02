@@ -4,8 +4,8 @@ import Deck from '../models/Deck.js'
 import Hand from '../models/Hand.js'
 import PlayingCard from './PlayingCard'
 
-import aiImage from '/Users/tesla/Coding-Projects/Hack-a-thons/card-game/card-game/src/images/dealer-icon.jpg'
-import playerImage from '/Users/tesla/Coding-Projects/Hack-a-thons/card-game/card-game/src/images/player-icon.png'
+import aiImage from '../../src/images/dealer-icon.jpg'
+import playerImage from '../images/player-icon.png'
 
 const CardGame = ()=> {
  const [playerHand, setPlayerHand] = useState([])

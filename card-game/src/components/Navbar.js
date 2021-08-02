@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import logoImage from '/Users/tesla/Coding-Projects/Hack-a-thons/card-game/card-game/src/images/logo.jpg'
 
 const Navbar = ()=> {
 
